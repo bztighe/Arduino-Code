@@ -11,11 +11,11 @@
 // initialize variables:
 
 //note arduino uno has two interrupt pins (2 and 3)
-#define RencOutA 2 //R encoder output A - pin 2 (interrupt)
-#define RencOutB 12 //R encoder output B
+#define R_encOutA 2 //R encoder output A - pin 2 (interrupt)
+#define R_encOutB 12 //R encoder output B
 
-#define LencOutA 3 // L encoder output A - pin 3 (interrupt)
-#define LencOutB 13 // L encoder output B 
+#define L_encOutA 3 // L encoder output A - pin 3 (interrupt)
+#define L_encOutB 13 // L encoder output B 
 
 const byte R_enable = 5;  //PWM speed control
 const byte R_phase = 7;  //motor direction
@@ -41,19 +41,26 @@ void setup() {
   // setup:
 
 
-  pinMode(RencOutA, INPUT);      //set encoder out A to an input pin(2) on arduino
-  digitalWrite(RencOutA, HIGH);  //turn on pull-up resistor
-  pinMode(RencOutB, INPUT);      //set encoder out B to an input pin(3) on arduino
-  digitalWrite(RencOutB, HIGH);  // turn on pull-up resistor
+  pinMode(R_encOutA, INPUT);      //set encoder out A to an input pin(2) on arduino
+  digitalWrite(R_encOutA, HIGH);  //turn on pull-up resistor
+  pinMode(R_encOutB, INPUT);      //set encoder out B to an input pin(3) on arduino
+  digitalWrite(R_encOutB, HIGH);  // turn on pull-up resistor
 
-  attachInterrupt(0, doEncoder, CHANGE);  //encoder pin on interrupt 0 - pin 2
+  pinMode(L_encOutA, INPUT);      //set encoder out A to an input pin(2) on arduino
+  digitalWrite(L_encOutA, HIGH);  //turn on pull-up resistor
+  pinMode(L_encOutB, INPUT);      //set encoder out B to an input pin(3) on arduino
+  digitalWrite(L_encOutB, HIGH);  // turn on pull-up resistor
 
+  attachInterrupt(0, R_doEncoder, CHANGE);  //encoder pin on interrupt 0 - (pin 2)
+  attachInterrupt(1, L_doEncoder, CHANGE);  //encoder pin on interrupt 1 - (pin 3) 
 
   Serial.begin(115200); //Using a higher serial begin rate increases accuracy
   Serial.print("Start");
+  
   pinMode(R_enable, OUTPUT); //sets R_enable pin as output (to determine SPEED)
   pinMode(R_phase, OUTPUT); //sets R_phase pin as output (to determine DIRECTION)
-
+  pinMode(L_enable, OUTPUT); //sets L_enable pin as output (to determine SPEED)
+  pinMode(L_phase, OUTPUT); //sets L_phase pin as output (to determine DIRECTION)
 }
 
 void loop() {
@@ -105,7 +112,7 @@ void doEncoder() {
   //If pinA and pinB are both high or both low it spins forward,
   //if they are different, its going backward.
 
-  if (digitalRead(RencOutA) == digitalRead(RencOutB)) {
+  if (digitalRead(R_encOutA) == digitalRead(R_encOutB)) {
     R_encPos--;
   } else {
     R_encPos++;
