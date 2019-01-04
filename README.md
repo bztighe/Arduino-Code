@@ -1,5 +1,5 @@
 # Arduino-Code
-Various Arduino IDE codes for robotic applications-
+Various Arduino IDE codes for robotics applications-
 Quick links
 ----
 -[Walking Robot Motors](https://github.com/bztighe/Arduino-Code/tree/master/Tighe/walking%20robot) Functioning and properly tuned Arduino code that uses PID (Proportion-Integral-Derivative) to accurately control velocity and displacement of two DC microgear motors with magnetic quadrature encoders.
