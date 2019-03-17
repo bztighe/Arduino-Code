@@ -15,4 +15,4 @@ Included are sub-routines for:
 - Position PID
 
 ## Hardware notes
-This code cannot be used with an Arduino Uno, as it requires 4 interrupt pins (one for each motor encoder). Arduino MICRO, LEONARDO, and MEGA are all viable options. Note that if using a MICRO, two of the interrupt pins are located on the default serial communication pins (TX/RX) which causes the initial code upload to fail after using serial communication. This is remedied by simply uploading the code a second time. 
+This code cannot be used with an Arduino Uno, as it requires 4 interrupt pins (one for each motor encoder). Arduino MICRO, LEONARDO, and MEGA are all viable options. Note that if using a MICRO, two of the interrupt pins are located on the default serial communication pins (TX/RX) which causes the initial code upload to fail after using serial communication. This is remedied by simply uploading the code a second time. Also, PID constants Kp,Ki,Kd are specific to each system and will need to be redefined.This process is called "tunning" and is easier to do using the "serial plotter" function of the code. 
