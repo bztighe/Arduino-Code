@@ -1,6 +1,6 @@
 # Walking Robot Motors
 ## Overall Concept
-This is a collection of programs used to control various combinations of motors and control techniques for a cable actuated walking robot. It also contains programs used to test various components of the build.
+This is a collection of programs used to control various combinations of motors and control techniques for a cable actuated walking robot. It also contains programs used to test various components of the build. All programs were developed for my walking robot project as an Undergraduate Research Assistant in Dr. Jiango Zhao's Adaptive Robotics Laboratory, Colorado State University.
 ## Programs
 Click on each name to jump to the description:
 
