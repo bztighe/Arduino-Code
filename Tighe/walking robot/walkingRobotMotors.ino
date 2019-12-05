@@ -3,7 +3,10 @@
  *  uses pololu micro metal gear motor, 6 pole magnetic quadrature encoder, 
  *  and motor control. 
  *  *note this code only reads 6 of the 12 possible Counts Per Revolution
- *  
+ 
+ *  NOTE: The encoder functions appear to only be using and reading the R_encoder, try generalizing the DoEncoder method and adding
+ *  a parameter so that it can be used on Renc and Lenc, then use a logic conditional to monitor both of them. (12/05/19)
+ 
  *  Created by: Brandon Tighe
  *  On: 11/18/2018
 */
