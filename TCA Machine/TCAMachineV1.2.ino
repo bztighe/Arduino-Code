@@ -1,6 +1,6 @@
 // For RAMPS 1.4
 //#include <Esplora.h>
-//Version, 7/5/2019, By Jiefeng Sun. at colorado state university. 
+//Version, 7/5/2019, By Brandon Tighe, Jiefeng Sun. at colorado state university. 
 //Library AccelStepper.h is available at http://www.airspayce.com/mikem/arduino/AccelStepper/classAccelStepper.html#aa279a50d30d0413f570c692cff071643
 // Note: Libray MUST BE ALTERED by the following:
 //    In the lib file AccelStepper.CPP:
